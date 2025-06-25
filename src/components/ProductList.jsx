@@ -6,13 +6,13 @@ const ProductList = () => {
   const products = useSelector(state => state.products.products);
   const categories = useSelector(state => state.categories.categories);
 
-  // Función para obtener el nombre de la categoría
+  // obtengo la categoria
   const getCategoryName = (categoryId) => {
     const category = categories.find(cat => cat.id === categoryId);
     return category ? category.name : 'Sin categoría';
   };
 
-  // Función para agregar producto al carrito
+  // agrego producto al carrito
   const handleAddToCart = (product) => {
     dispatch(addToCart({ product, quantity: 1 }));
   };

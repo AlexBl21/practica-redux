@@ -26,12 +26,12 @@ export const categoriesSlice = createSlice({
   name: "categories",
   initialState,
   reducers: {
-    // Crear categoría
+    // creo categoria
     addCategory: (state, action) => {
       state.categories.push(action.payload);
     },
     
-    // Actualizar categoría
+    // actualizo categoria
     updateCategory: (state, action) => {
       const { id, ...updatedCategory } = action.payload;
       const index = state.categories.findIndex(category => category.id === id);
@@ -40,17 +40,17 @@ export const categoriesSlice = createSlice({
       }
     },
     
-    // Eliminar categoría
+    // elimino categoria
     deleteCategory: (state, action) => {
       state.categories = state.categories.filter(category => category.id !== action.payload);
     },
     
-    // Establecer loading
+    // establezco loading
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
     
-    // Establecer error
+      // establezco error
     setError: (state, action) => {
       state.error = action.payload;
     }

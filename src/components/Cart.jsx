@@ -6,29 +6,29 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
 
-  // Función para remover producto del carrito
+  // remuevo el producto
   const handleRemoveFromCart = (productId) => {
     dispatch(removeFromCart(productId));
   };
 
-  // Función para actualizar cantidad
+  // cambi la cantiada
   const handleUpdateQuantity = (productId, quantity) => {
     dispatch(updateQuantity({ productId, quantity }));
   };
 
-  // Función para limpiar carrito
+  // limpio
   const handleClearCart = () => {
     dispatch(clearCart());
   };
 
-  // Función para finalizar compra
+  // finalizo la compra
   const handleCheckout = () => {
-    // Actualizar stock de productos
+    // actualizo stock
     cart.items.forEach(item => {
       dispatch(updateStock({ productId: item.id, quantity: item.quantity }));
     });
     
-    // Finalizar compra
+    // Finalizo compra
     dispatch(checkout());
     alert('¡Compra realizada con éxito!');
   };

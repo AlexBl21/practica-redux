@@ -9,7 +9,7 @@ import UserManager from './components/UserManager';
 function App() {
   const [currentSection, setCurrentSection] = useState('products');
 
-  // Función para renderizar la sección actual
+  // renderizo la seccion actual
   const renderCurrentSection = () => {
     switch (currentSection) {
       case 'products':

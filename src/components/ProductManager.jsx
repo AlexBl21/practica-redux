@@ -18,7 +18,7 @@ const ProductManager = () => {
     image: ''
   });
 
-  // Función para manejar cambios en el formulario
+  // cambio el formulario
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -27,7 +27,7 @@ const ProductManager = () => {
     }));
   };
 
-  // Función para limpiar formulario
+  // limpio el formulario
   const clearForm = () => {
     setFormData({
       name: '',
@@ -40,7 +40,7 @@ const ProductManager = () => {
     setEditingProduct(null);
   };
 
-  // Función para manejar envío del formulario
+  // envio el formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -51,10 +51,10 @@ const ProductManager = () => {
     };
 
     if (editingProduct) {
-      // Actualizar producto existente
+      // actualizo el producto
       dispatch(updateProduct({ id: editingProduct.id, ...productData }));
     } else {
-      // Crear nuevo producto
+      // creo nuevo producto
       dispatch(addProduct({
         ...productData,
         id: uuidv4()
@@ -64,7 +64,7 @@ const ProductManager = () => {
     clearForm();
   };
 
-  // Función para editar producto
+  // edito el producto
   const handleEdit = (product) => {
     setEditingProduct(product);
     setFormData({
@@ -77,7 +77,7 @@ const ProductManager = () => {
     });
   };
 
-  // Función para eliminar producto
+  // elimino el producto
   const handleDelete = (productId) => {
     if (window.confirm('¿Estás seguro de que quieres eliminar este producto?')) {
       dispatch(deleteProduct(productId));
@@ -87,7 +87,7 @@ const ProductManager = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Formulario */}
+        {/* formulario pa no perderme*/}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">
             {editingProduct ? 'Editar Producto' : 'Crear Nuevo Producto'}
@@ -210,7 +210,7 @@ const ProductManager = () => {
           </form>
         </div>
 
-        {/* Lista de Productos */}
+        {/* aqui se supone son los productos*/}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Gestionar Productos</h2>
           

@@ -66,7 +66,6 @@ export const cartSlice = createSlice({
     
     // Finalizar compra (simulación)
     checkout: (state) => {
-      // Aquí podrías agregar lógica adicional como guardar en historial
       state.items = [];
       state.total = 0;
       state.itemCount = 0;

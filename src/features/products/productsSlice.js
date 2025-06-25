@@ -38,12 +38,12 @@ export const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    // Crear producto
+    // creo producto
     addProduct: (state, action) => {
       state.products.push(action.payload);
     },
     
-    // Actualizar producto
+    // actualizo producto
     updateProduct: (state, action) => {
       const { id, ...updatedProduct } = action.payload;
       const index = state.products.findIndex(product => product.id === id);
@@ -52,12 +52,12 @@ export const productsSlice = createSlice({
       }
     },
     
-    // Eliminar producto
+    // elimino producto
     deleteProduct: (state, action) => {
       state.products = state.products.filter(product => product.id !== action.payload);
     },
     
-    // Actualizar stock (cuando se compra)
+    // actualizo stock (cuando se compra)
     updateStock: (state, action) => {
       const { productId, quantity } = action.payload;
       const product = state.products.find(p => p.id === productId);
@@ -66,12 +66,12 @@ export const productsSlice = createSlice({
       }
     },
     
-    // Establecer loading
+    // establezco loading
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
     
-    // Establecer error
+    // establezco error
     setError: (state, action) => {
       state.error = action.payload;
     }

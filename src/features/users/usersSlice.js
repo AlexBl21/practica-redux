@@ -23,12 +23,12 @@ export const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    // Crear usuario
+    // creo usuario
     addUser: (state, action) => {
       state.users.push(action.payload);
     },
     
-    // Actualizar usuario
+    // actualizo usuario
     updateUser: (state, action) => {
       const { id, ...updatedUser } = action.payload;
       const index = state.users.findIndex(user => user.id === id);
@@ -37,22 +37,22 @@ export const usersSlice = createSlice({
       }
     },
     
-    // Eliminar usuario
+    // elimino usuario
     deleteUser: (state, action) => {
       state.users = state.users.filter(user => user.id !== action.payload);
     },
     
-    // Agregar múltiples usuarios desde CSV
+    // agrego múltiples usuarios desde CSV
     addUsersFromCSV: (state, action) => {
       state.users.push(...action.payload);
     },
     
-    // Establecer loading
+    // establezco loading
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
     
-    // Establecer error
+    // establezco error
     setError: (state, action) => {
       state.error = action.payload;
     }
